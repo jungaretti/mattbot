@@ -1,4 +1,5 @@
 const nacl = require("tweetnacl");
+const movies = require("./movies");
 
 function verifyRequest(req) {
   // prettier-ignore
@@ -15,6 +16,11 @@ function verifyRequest(req) {
       Buffer.from(publicKey, "hex")
     )
   );
+}
+
+function randomMovie(movies) {
+  const randomIndex = Math.floor(Math.random() * movies.length);
+  return movies[randomIndex];
 }
 
 const resInv = () => {
@@ -40,6 +46,7 @@ const resAck = () => {
   };
 };
 
+// Reply to an interaction with a message
 const resMsg = (content) => {
   return {
     headers: {
@@ -66,7 +73,10 @@ module.exports = async function (context, req) {
     // Acknowledge pings
     context.res = resAck();
   } else {
-    switch (interaction.command) {
+    switch (interaction.data.name) {
+      case "movie":
+        context.res = resMsg(`${randomMovie(movies)} is one of my favorites`);
+        break;
       default:
         context.res = resMsg("Alright, alright, alright!");
         break;

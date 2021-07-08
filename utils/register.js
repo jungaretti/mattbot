@@ -11,4 +11,6 @@ const testing = "https://discord.com/api/v8/applications/862484713884221452/guil
 
 const url = process.env.NODE_ENV === "production" ? global : testing;
 
-Discord.registerCommand(url, commands[0]);
+for (const command of commands) {
+  Discord.registerCommand(url, command);
+}
