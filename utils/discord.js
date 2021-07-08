@@ -4,6 +4,13 @@ const fetch = require("node-fetch");
 // Load environment variables from .env
 dotenv.config();
 
+async function verboseFetch(url, options) {
+  const res = await fetch(url, options);
+  const json = await res.json();
+  console.log(`Status ${res.status}`);
+  console.log(json);
+}
+
 function registerCommand(url, command) {
   // prettier-ignore
   const options = {
@@ -15,7 +22,7 @@ function registerCommand(url, command) {
     body: JSON.stringify(command),
   };
 
-  fetch(url, options).then((res) => console.log(`Status ${res.status}`));
+  verboseFetch(url, options);
 }
 
 module.exports = {

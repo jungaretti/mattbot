@@ -9,6 +9,8 @@
     "node-fetch": "^2.6.1"
   },
   "scripts": {
+    "register:testing": "node utils/register.js",
+    "register": "NODE_ENV=production node utils/register.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
