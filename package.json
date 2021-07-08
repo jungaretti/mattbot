@@ -1,0 +1,17 @@
+{
+  "name": "mattbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "commands.js",
+  "dependencies": {},
+  "devDependencies": {
+    "dotenv": "^10.0.0",
+    "node-fetch": "^2.6.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
