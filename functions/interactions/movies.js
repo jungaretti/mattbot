@@ -1,3 +1,4 @@
+// Could fetch these from IMDB, but I like curating them
 module.exports = [
   { title: "Dazed and Confused", year: 1993 },
   { title: "Boys on the Side", year: 1995 },

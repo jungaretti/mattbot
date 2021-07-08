@@ -1,12 +1,15 @@
 const nacl = require("tweetnacl");
 const movies = require("./movies");
 
+// "You must validate the request each time you receive an interaction."
+// https://discord.com/developers/docs/interactions/slash-commands#security-and-authorization
 function verifyRequest(req) {
   // prettier-ignore
   const publicKey="71c0aebfcef970766575bc42497d1b9334b97b62fd6879a88d4a815f8536f864";
   const signature = req.headers["x-signature-ed25519"];
   const timestamp = req.headers["x-signature-timestamp"];
 
+  // Invalid requests may not have those headers
   return (
     signature &&
     timestamp &&
@@ -24,12 +27,14 @@ function pickRandom(elements) {
 }
 
 function buildRecommendation(movie) {
+  // Build a recommendation using one of these templates
   const options = [
     `You should watch ${movie.title}. I'll make the popcorn!`,
     `${movie.title} is one of my all-time favorites`,
     `Alright, alright alright! I choose ${movie.title}`,
     `Have you seen ${movie.title}?`,
   ];
+
   return pickRandom(options);
 }
 
@@ -82,6 +87,7 @@ module.exports = async function (context, req) {
     // Acknowledge pings
     context.res = resAck();
   } else {
+    // Reply to interactions
     switch (interaction.data.name) {
       case "movie":
         const movie = pickRandom(movies);
