@@ -18,9 +18,19 @@ function verifyRequest(req) {
   );
 }
 
-function randomMovie(movies) {
-  const randomIndex = Math.floor(Math.random() * movies.length);
-  return movies[randomIndex];
+function pickRandom(elements) {
+  const randomIndex = Math.floor(Math.random() * elements.length);
+  return elements[randomIndex];
+}
+
+function buildRecommendation(movie) {
+  const options = [
+    `You should watch ${movie.title}. I'll make the popcorn!`,
+    `${movie.title} is one of my all-time favorites`,
+    `Alright, alright alright! I choose ${movie.title}`,
+    `Have you seen ${movie.title}?`,
+  ];
+  return pickRandom(options);
 }
 
 const resInv = () => {
@@ -46,7 +56,6 @@ const resAck = () => {
   };
 };
 
-// Reply to an interaction with a message
 const resMsg = (content) => {
   return {
     headers: {
@@ -75,7 +84,8 @@ module.exports = async function (context, req) {
   } else {
     switch (interaction.data.name) {
       case "movie":
-        context.res = resMsg(`${randomMovie(movies)} is one of my favorites`);
+        const movie = pickRandom(movies);
+        context.res = resMsg(buildRecommendation(movie));
         break;
       default:
         context.res = resMsg("Alright, alright, alright!");
