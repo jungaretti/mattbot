@@ -11,4 +11,4 @@ MattBot is a Discord bot whose sole purpose is to recommend movies starring Matt
 
 ## Getting Started
 
-MattBot is deployed with Azure Functions. Each time someone uses one of MattBot's Slash Commands, an Interaction is POSTed to `functions/interactions/index.js`. For more information about Slash Commands and Interactions, [check out the Discord Developer Portal](https://discord.com/developers/docs/interactions/slash-commands).
+MattBot is deployed with Azure Functions. Each time someone uses one of MattBot's Slash Commands, an Interaction is POSTed to `interaction/index.js`. For more information about Slash Commands and Interactions, [check out the Discord Developer Portal](https://discord.com/developers/docs/interactions/slash-commands).
