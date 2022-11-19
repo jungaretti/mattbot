@@ -12,13 +12,13 @@ on:
 env:
   AZURE_FUNCTIONAPP_NAME: mattbot
   AZURE_FUNCTIONAPP_PACKAGE_PATH: "."
-  NODE_VERSION: "14.x"
+  NODE_VERSION: "16.x"
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Setup Node ${{ env.NODE_VERSION }} environment
         uses: actions/setup-node@v2
         with:
@@ -26,7 +26,6 @@ jobs:
       - name: Build functions
         shell: bash
         run: |
-          cd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
           npm install
           npm run build
       - name: Deploy functions
