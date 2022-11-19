@@ -9,6 +9,7 @@ MattBot is a Discord bot whose sole purpose is to recommend movies starring Matt
 - `ping`: Make sure that MattBot is awake
 - `movie`: Recommend a movie starring Matthew McConaughey
 
-## Getting Started
+## Deployment
 
-MattBot is deployed with Azure Functions. Each time someone uses one of MattBot's Slash Commands, an Interaction is POSTed to `interaction/index.js`. For more information about Slash Commands and Interactions, [check out the Discord Developer Portal](https://discord.com/developers/docs/interactions/slash-commands).
+1. Open Visual Studio Code
+1. Run the `Deploy to Function App` command
