@@ -4,13 +4,11 @@ export class PingCommand extends SlashCommand {
   constructor(creator: SlashCreator) {
     super(creator, {
       name: "ping",
-      description: "Says hello to you.",
+      description: "My rule is to break one sweat a day",
     });
-
-    this.filePath = __filename;
   }
 
-  async run(ctx: CommandContext): Promise<any> {
+  async run(ctx: CommandContext): Promise<string> {
     return "Alright, alright, alright!";
   }
 }

@@ -1,6 +1,8 @@
 import { join } from "path";
 import { env } from "process";
 import { AzureFunctionServer, SlashCreator } from "slash-create";
+import { MovieCommand } from "./commands/movie";
+import { PingCommand } from "./commands/ping";
 
 (async () => {
   const creator = new SlashCreator({
@@ -10,12 +12,7 @@ import { AzureFunctionServer, SlashCreator } from "slash-create";
   });
 
   await creator
-    // The first argument is required, but rhe second argument is the "target" or the name of the export.
-    // By default, the target is "interactions".
     .withServer(new AzureFunctionServer(module.exports))
-    .registerCommandsIn(join(__dirname, "commands"));
-
-  // If a guild have been specified, only sync the command with the guild
-  if (env.COMMANDS_GUILD_ID) creator.syncCommandsIn(env.COMMANDS_GUILD_ID);
-  else creator.syncCommands();
+    .registerCommands([new PingCommand(creator), new MovieCommand(creator)])
+    .syncCommandsAsync();
 })();
