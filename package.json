@@ -8,7 +8,9 @@
     "start": "func start",
     "test": "echo \"No tests yet...\""
   },
-  "dependencies": {},
+  "dependencies": {
+    "slash-create": "^5.10.0"
+  },
   "devDependencies": {
     "@azure/functions": "^3.0.0",
     "azure-functions-core-tools": "^4.x",
