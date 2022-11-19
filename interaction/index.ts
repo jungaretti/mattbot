@@ -1,4 +1,4 @@
-import { join } from "path";
+import { config } from "dotenv";
 import { env } from "process";
 import { AzureFunctionServer, SlashCreator } from "slash-create";
 import { MovieCommand } from "./commands/movie";
