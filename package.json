@@ -1,23 +1,8 @@
 {
   "name": "mattbot",
   "version": "1.0.0",
-  "description": "",
-  "dependencies": {
-    "tweetnacl": "^1.0.3"
-  },
+  "scripts": {},
   "devDependencies": {
-    "dotenv": "^10.0.0",
-    "node-fetch": "^2.6.1",
-    "ngrok": "^4.0.1"
-  },
-  "scripts": {
-    "tunnel": "ngrok http 7071",
-    "start": "func start",
-    "register:testing": "node utils/register.js",
-    "register": "NODE_ENV=production node utils/register.js",
-    "test": "echo \"No tests yet...\""
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+    "azure-functions-core-tools": "^4.0.4895"
+  }
 }
