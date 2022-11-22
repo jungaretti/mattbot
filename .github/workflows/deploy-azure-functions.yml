@@ -1,0 +1,32 @@
+name: Deploy to Azure Functions
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+env:
+  AZURE_APP_NAME: mattbot
+  NODE_VERSION: 16.x
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - uses: azure/CLI@v1
+      - name: Install dependencies
+        shell: bash
+        run: npm install
+      - name: Build project
+        shell: bash
+        run: npm run build
+      - name: Deploy to Azure
+        shell: bash
+        run: |
+          az login --service-principal -u ${{ secrets.AZURE_SP_ID }} -p ${{ secrets.AZURE_SP_PASSWORD }} --tenant ${{ secrets.AZURE_SP_TENANT }}
+          npx func azure functionapp publish ${{ env.AZURE_APP_NAME }} --typescript --no-build
