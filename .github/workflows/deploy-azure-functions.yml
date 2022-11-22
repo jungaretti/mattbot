@@ -18,13 +18,15 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
-      - uses: azure/CLI@v1
       - name: Install dependencies
         shell: bash
         run: npm install
       - name: Build project
         shell: bash
         run: npm run build
+      - name: Install Azure CLI
+        shell: bash
+        run: curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
       - name: Deploy to Azure
         shell: bash
         run: |
