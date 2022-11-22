@@ -11,5 +11,4 @@ MattBot is a Discord bot whose sole purpose is to recommend movies starring Matt
 
 ## Deployment
 
-1. Open Visual Studio Code
-1. Run the `Deploy to Function App` command
+The [`deploy-azure-functions.yml`](https://github.com/jungaretti/mattbot/blob/main/.github/workflows/deploy-azure-functions.yml) workflow continuously deploys MattBot to Azure. It uses an Azure service principal for authentication.
