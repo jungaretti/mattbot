@@ -4,7 +4,8 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "start": "func start --typescript"
+    "func:start": "func start --typescript",
+    "dev": "npm run build && npm run func:start"
   },
   "dependencies": {
     "@types/node": "16.x",
