@@ -1,9 +1,6 @@
-name: Deploy to Azure Functions
+name: Release MattBot
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
 
 env:
