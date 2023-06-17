@@ -25,7 +25,7 @@ The fastest way to test your changes is to run MattBot locally, forward its port
 1. `npm install`
 1. `npm run dev`
 1. Forward the port
-1. Update `MattBot Dev`'s endpoint URL [on the Discord Developer Portal](https://discord.com/developers/applications/1043439421632036964/information)
+1. Set `MattBot Dev`'s endpoint URL [on the Discord Developer Portal](https://discord.com/developers/applications/1043439421632036964/information)
 
 ### Deploy to Staging
 
@@ -34,7 +34,7 @@ You can use [`mattbot-dev`](https://portal.azure.com/#@jungarettioutlook.onmicro
 1. `az login`
 1. `npm install`
 1. `npm run publish:dev`
-1. Update `MattBot Dev`'s endpoint URL [on the Discord Developer Portal](https://discord.com/developers/applications/1043439421632036964/information) to `https://mattbot-dev.azurewebsites.net/api/interaction`
+1. Set `MattBot Dev`'s endpoint URL to `https://mattbot-dev.azurewebsites.net/api/interaction` [on the Discord Developer Portal](https://discord.com/developers/applications/1043439421632036964/information)
 
 ### Deploy to Production
 
