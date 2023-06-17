@@ -4,8 +4,10 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "func:start": "func start --typescript",
-    "dev": "npm run build && npm run func:start"
+    "dev:func": "func start --typescript",
+    "dev": "npm run build && npm run dev:func",
+    "publish:dev": "npm run build && func azure functionapp publish mattbot-dev --typescript --no-build",
+    "publish:prod": "npm run build && func azure functionapp publish mattbot --typescript --no-build"
   },
   "dependencies": {
     "@types/node": "16.x",

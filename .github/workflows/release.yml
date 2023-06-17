@@ -4,7 +4,6 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_APP_NAME: mattbot
   NODE_VERSION: "18.12.1"
 
 jobs:
@@ -28,4 +27,4 @@ jobs:
         shell: bash
         run: |
           az login --service-principal -u ${{ secrets.AZURE_SP_ID }} -p ${{ secrets.AZURE_SP_PASSWORD }} --tenant ${{ secrets.AZURE_SP_TENANT }}
-          npx func azure functionapp publish ${{ env.AZURE_APP_NAME }} --typescript --no-build
+          npm run publish:prod
