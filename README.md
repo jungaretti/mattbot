@@ -29,7 +29,7 @@ The fastest way to test your changes is to run MattBot locally, forward its port
 
 ### Deploy to Staging
 
-You can use `mattbot-dev` ([link to Azure Portal](https://portal.azure.com/#@jungarettioutlook.onmicrosoft.com/resource/subscriptions/766d1f2a-4758-42f6-b770-355bd807d6ac/resourceGroups/mattbot-dev-usc/providers/Microsoft.Web/sites/mattbot-dev/appServices)) to test your changes in a real Azure Functions app.
+You can use [`mattbot-dev`](https://portal.azure.com/#@jungarettioutlook.onmicrosoft.com/resource/subscriptions/766d1f2a-4758-42f6-b770-355bd807d6ac/resourceGroups/mattbot-dev-usc/providers/Microsoft.Web/sites/mattbot-dev/appServices) to test your changes in a real Azure Functions app.
 
 1. `az login`
 1. `npm install`
@@ -38,4 +38,4 @@ You can use `mattbot-dev` ([link to Azure Portal](https://portal.azure.com/#@jun
 
 ### Deploy to Production
 
-You can use the [`Release MattBot`](https://github.com/jungaretti/mattbot/actions/workflows/release.yml) action to trigger a new production release. This action uses an Azure service principal to deploy `mattbot` ([link to Azure Portal](https://portal.azure.com/#@jungarettioutlook.onmicrosoft.com/resource/subscriptions/766d1f2a-4758-42f6-b770-355bd807d6ac/resourceGroups/mattbot-usc/providers/Microsoft.Web/sites/mattbot/appServices)) globally for all Discord users.
+You can use the [`Release MattBot`](https://github.com/jungaretti/mattbot/actions/workflows/release.yml) action to trigger a new production release. This action uses an Azure service principal to deploy [`mattbot`](https://portal.azure.com/#@jungarettioutlook.onmicrosoft.com/resource/subscriptions/766d1f2a-4758-42f6-b770-355bd807d6ac/resourceGroups/mattbot-usc/providers/Microsoft.Web/sites/mattbot/appServices) globally for all Discord users.
