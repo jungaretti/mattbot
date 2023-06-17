@@ -21,8 +21,9 @@ Use the following script to deploy `mattbot-dev` to Azure Functions.
 
 ```bash
 npm install
-az login
+npm run build
 
+az login
 npx func azure functionapp publish mattbot-dev --typescript --no-build
 ```
 
