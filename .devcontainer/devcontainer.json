@@ -2,7 +2,7 @@
     "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
     "features": {
         "ghcr.io/devcontainers/features/node:1": {
-            "version": "20.12.2"
+            "version": "22.20.0"
         },
         "ghcr.io/devcontainers/features/azure-cli:1": {}
     }
