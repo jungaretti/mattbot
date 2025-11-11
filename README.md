@@ -24,7 +24,7 @@ The fastest way to test your changes is to run MattBot locally, forward its port
 1. Update `.env` with `MattBot Dev`'s information
 1. `npm install`
 1. `npm run dev`
-1. Forward the port
+1. `npm run forward`
 1. Set `MattBot Dev`'s endpoint URL [on the Discord Developer Portal](https://discord.com/developers/applications/1043439421632036964/information)
 
 ### Deploy to Staging
