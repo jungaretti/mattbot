@@ -9,4 +9,5 @@ export const greetings: Greeting[] = [
   (m) => `${m.title} is a CLASSIC!`,
   (m) => `Grab a drink and turn on ${m.title}`,
   (m) => `You gotta watch ${m.title}`,
+  (m) => `Settle in and enjoy ${m.title}`,
 ];

@@ -21,5 +21,7 @@ export const movies: Movie[] = [
   { title: "Killer Joe", year: 2011 },
   { title: "Magic Mike", year: 2012 },
   { title: "Dallas Buyers Club", year: 2013 },
+  { title: "The Wolf of Wall Street", year: 2013 },
+  { title: "Interstellar", year: 2014 },
   { title: "Free State of Jones", year: 2016 },
 ];
