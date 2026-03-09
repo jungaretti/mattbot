@@ -3,6 +3,7 @@ import { env } from "process";
 import { AzureFunctionServer, SlashCreator } from "slash-create";
 import { MovieCommand } from "./commands/MovieCommand";
 import { PingCommand } from "./commands/PingCommand";
+import { QuoteCommand } from "./commands/QuoteCommand";
 
 (async () => {
   config();
@@ -12,7 +13,7 @@ import { PingCommand } from "./commands/PingCommand";
     token: env.DISCORD_BOT_TOKEN,
   });
 
-  const commands = [new PingCommand(creator), new MovieCommand(creator)];
+  const commands = [new PingCommand(creator), new MovieCommand(creator), new QuoteCommand(creator)];
 
   await creator
     .withServer(new AzureFunctionServer(module.exports))
