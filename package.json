@@ -7,8 +7,8 @@
     "dev:func": "func start --typescript",
     "dev": "npm run build && npm run dev:func",
     "forward": "ngrok http 7071",
-    "publish:dev": "npm run build && func azure functionapp publish mattbot-dev --typescript --no-build",
-    "publish:prod": "npm run build && func azure functionapp publish mattbot --typescript --no-build"
+    "publish:dev": "npm run build && func azure functionapp publish mattbot-dev-v2 --typescript --no-build",
+    "publish:prod": "npm run build && func azure functionapp publish mattbot-v2 --typescript --no-build"
   },
   "dependencies": {
     "dotenv": "^16.0.3",

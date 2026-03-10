@@ -29,12 +29,12 @@ The fastest way to test your changes is to run MattBot locally, forward its port
 
 ### Deploy to Staging
 
-You can use [`mattbot-dev`](https://portal.azure.com/#@jungarettioutlook.onmicrosoft.com/resource/subscriptions/766d1f2a-4758-42f6-b770-355bd807d6ac/resourceGroups/mattbot-dev-usc/providers/Microsoft.Web/sites/mattbot-dev/appServices) to test your changes in a real Azure Functions app.
+You can use [`mattbot-dev-v2`](https://portal.azure.com/#@jungarettioutlook.onmicrosoft.com/resource/subscriptions/766d1f2a-4758-42f6-b770-355bd807d6ac/resourceGroups/mattbot-dev-usc/providers/Microsoft.Web/sites/mattbot-dev-v2/appServices) to test your changes in a real Azure Functions app.
 
 1. `az login`
 1. `npm install`
 1. `npm run publish:dev`
-1. Set `MattBot Dev`'s endpoint URL to `https://mattbot-dev.azurewebsites.net/api/interaction` [on the Discord Developer Portal](https://discord.com/developers/applications/1043439421632036964/information)
+1. Set `MattBot Dev`'s endpoint URL to `https://mattbot-dev-v2.azurewebsites.net/api/interaction` [on the Discord Developer Portal](https://discord.com/developers/applications/1043439421632036964/information)
 
 ### Deploy to Production
 
