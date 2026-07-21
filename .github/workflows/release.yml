@@ -33,4 +33,4 @@ jobs:
         with:
           azcliversion: latest
           inlineScript: |
-            func azure functionapp publish mattbot-prd-v2 --typescript --no-build
+            npm run publish:prod
