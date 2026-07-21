@@ -20,11 +20,15 @@ jobs:
       - name: Build project
         shell: bash
         run: npm run build
-      - name: Install Azure CLI
-        shell: bash
-        run: curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-      - name: Deploy to Azure
-        shell: bash
-        run: |
-          az login --service-principal -u ${{ secrets.AZURE_SP_APPLICATION_ID }} -p ${{ secrets.AZURE_SP_SECRET_VALUE }} --tenant ${{ secrets.AZURE_SP_TENANT }}
-          npm run publish:prod
+      - name: Azure CLI Login
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      - name: Azure CLI script
+        uses: azure/cli@v2
+        with:
+          azcliversion: latest
+          inlineScript: |
+            func azure functionapp publish mattbot-prd-v2 --typescript --no-build
