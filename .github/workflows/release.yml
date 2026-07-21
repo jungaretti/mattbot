@@ -26,5 +26,4 @@ jobs:
       - name: Deploy to Azure
         shell: bash
         run: |
-          az login --service-principal -u ${{ secrets.AZURE_SP_APPLICATION_ID }} -p ${{ secrets.AZURE_SP_SECRET_VALUE }} --tenant ${{ secrets.AZURE_SP_TENANT }}
           npm run publish:prod
